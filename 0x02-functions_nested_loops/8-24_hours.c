@@ -2,24 +2,33 @@
 
 /**
  * jack_bauer - prints every minute of the day
+ *
+ * Return:....
  */
 void jack_bauer(void)
 {
+	int a, b, c, d;
 
-	int term, longterm;
-
-	for (term = 0; term <= 23; term++)
+	for (a = 0; a <= 2; a++)
 	{
-		for (longterm = 0; longterm <= 59; longterm++)
+
+		for (b = 0; b <= 9; b++)
 		{
-			_putchar((term / 10) + '0');
-			_putchar((term % 10) + '0');
-			_putchar(':');
-			_putchar((longterm / 10) + '0');
-			_putchar((longterm % 10) + '0');
-			_putchar('\n');
+			if ((a <= 1 && b <= 9) || (a <= 2 && b <= 3))
+			{
+				for (c = 0; c <= 5; c++)
+				{
+					for (d = 0; d <= 9; d++)
+					{
+						_putchar(a + '0');
+						_putchar(b + '0');
+						_putchar(58);
+						_putchar(c + '0');
+						_putchar(d + '0');
+						_putchar('\n');
+					}
+				}
+			}
 		}
 	}
 }
-
-
