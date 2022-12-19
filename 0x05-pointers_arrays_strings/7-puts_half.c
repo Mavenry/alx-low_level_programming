@@ -22,5 +22,14 @@ void puts_half(char *str)
 			n++;
 		}
 	}
+	else
+	{
+		n = (i / 2);
+		while (str[n] != '\0')
+		{
+			_putchar(str[n]);
+			n++;
+		}
+	}
 	_putchar('\n');
 }
