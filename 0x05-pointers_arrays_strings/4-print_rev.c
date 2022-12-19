@@ -1,17 +1,23 @@
 #include "main.h"
 
 /**
- * _puts - check the code for Holberton School students.
- *  @str: validate the character
- *  Return: Always 0.
+ * print_rev - print reverse characters.
+ *@s: validate the character
+ *Return: Always 0
  */
-void _puts(char *str)
+void print_rev(char *s)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; str[i] != '\0' ; i++)
+	while (s[i] != '\0')
 	{
-		_putchar(str[i]);
+		i++;
+	}
+	i--;
+	for (; i >= 0; i--)
+	{
+		_putchar(s[i]);
 	}
 	_putchar('\n');
 }
+
