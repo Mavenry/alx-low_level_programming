@@ -3,13 +3,12 @@
 #include <time.h>
 
 /**
- * _atoi- program that generates random valid
+ * main- program that generates random valid
  * passwords for the program 101-crackme
- * @s: Array
  *
  * Return: Always 0 (Success)
  */
-int _atoi(char *s)
+int main(void)
 {
 	int pass[100];
 	int i, sum, n;
