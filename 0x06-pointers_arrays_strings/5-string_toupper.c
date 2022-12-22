@@ -1,22 +1,23 @@
 #include "main.h"
 
 /**
- * reverse_array - Function that reverses the content of an array of integers.
+ * string_toupper - Function that reverses the content of an array of integers.
  *
- * @a: a is the array
- * @n: Where n is the number of elements of the array
+ * @s: s is the array
+ *
  * Return: Always 0.
  */
-void reverse_array(int *a, int n)
+char *string_toupper(char *s)
 {
-	int i = 0, Aux;
+	int i = 0;
 
-	n = n - 1;
-	while (i <= n)
-
+	while (s[i] != '\0')
 	{
-		Aux = a[i];
-		a[i++] = a[n];
-		a[n--] = Aux;
+		if ((s[i] >= 97) && (s[i] <= 122))
+		{
+			s[i] = s[i] - 32;
+		}
+		i++;
 	}
+	return (s);
 }
