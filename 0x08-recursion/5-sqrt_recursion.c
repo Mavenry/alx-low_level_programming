@@ -10,7 +10,7 @@
 int find_root(int n, int root)
 {
 if (root * root > n)
-return (-1)
+return (-1);
 
 if (root * root == n)
 return (root);
