@@ -1,32 +1,33 @@
 #include "main.h"
 
 /**
- * sqrt_a - check the code for Holberton School students.
- * @a: number
- * @b: number of power
- * Return: Always 0.
+ * find_root - find square root of n, starting from the smallest possible, 0
+ * @n: n
+ * @root: test this root
+ * Return: natural square root, or -1 if not natural root
  */
 
-int sqrt_a(int a, int b)
+int find_root(int n, int root)
 {
-	if (b * b == a)
-	{
-		return (b);
-	}
-	else if (b * b > a)
-	{
-		return (-1);
-	}
-	return (sqrt_a(a, b + 1));
+if (root * root > n)
+return (-1)
+
+if (root * root == n)
+return (root);
+
+return (find_root(n, root + 1));
 }
 
 /**
- * sqrt_recursion - check the code for Holberton School students.
- * @n: number
- *
- * Return: Always 0.
+ * _sqrt_recursion - find natural square root of n
+ * @n: n
+ * Return: natural square root, or -1 if not natural root
  */
+
 int _sqrt_recursion(int n)
 {
-	return (sqrt_a(n, 0));
+if (n < 0)
+return (-1);
+
+return (find_root(n, 0));
 }
