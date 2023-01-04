@@ -22,9 +22,9 @@ int sqrt_a(int a, int b)
 
 /**
  * sqrt_recursion - check the code for Holberton School students.
- *  @n: number
+ * @n: number
  *
- *  Return: Always 0.
+ * Return: Always 0.
  */
 int _sqrt_recursion(int n)
 {
