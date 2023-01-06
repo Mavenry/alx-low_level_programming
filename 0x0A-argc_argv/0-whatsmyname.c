@@ -2,15 +2,14 @@
 #include "main.h"
 
 /**
- * main - prints buffer in hexa
- * @argc: he number of command line arguments
- * @argc: he number of command line arguments
- *
- * Return: Nothing.
+ * main - print name of program
+ * @argc: argument counter
+ * @argv: pointer to array of arguments
+ * Return: 0 on success
  */
 int main(int argc, char *argv[])
 {
-	(void)argc;
+	if (argc > 0)
 	printf("%s\n", argv[0]);
 	return (0);
 }
