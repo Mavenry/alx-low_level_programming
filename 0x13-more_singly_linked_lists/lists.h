@@ -1,61 +1,50 @@
-#include "lists.h"
-#include <stdlib.h>
+#ifndef _LISTS_
+#define _LISTS_
+
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * _r - reallocates memory for an array of pointers
- * to the nodes in a linked list
- * @list: the old list to append
- * @size: size of the new list (always one more than the old list)
- * @new: new node to add to the list
+ * struct listint_s - singly linked list
+ * @n: integer
+ * @next: points to the next node
  *
- * Return: pointer to the new list
+ * Description: singly linked list node structure
+ * for Holberton project
  */
-const listint_t **_r(const listint_t **list, size_t size, const listint_t *new)
+typedef struct listint_s
 {
-	const listint_t **newlist;
-	size_t i;
-
-	newlist = malloc(size * sizeof(listint_t *));
-	if (newlist == NULL)
-	{
-		free(list);
-		exit(98);
-	}
-	for (i = 0; i < size - 1; i++)
-		newlist[i] = list[i];
-	newlist[i] = new;
-	free(list);
-	return (newlist);
-}
+	int n;
+	struct listint_s *next;
+} listint_t;
 
 /**
- * print_listint_safe - prints a listint_t linked list.
- * @head: pointer to the start of the list
+ * struct listp_s - singly linked list
+ * @p: pointers of nodes
+ * @next: points to the next node
  *
- * Return: the number of nodes in the list
+ * Description: singly linked list of pointers
  */
-size_t print_listint_safe(const listint_t *head)
+typedef struct listp_s
 {
-	size_t i, num = 0;
-	const listint_t **list = NULL;
+	void *p;
+	struct listp_s *next;
+} listp_t;
 
-	while (head != NULL)
-	{
-		for (i = 0; i < num; i++)
-		{
-			if (head == list[i])
-			{
-				printf("-> [%p] %d\n", (void *)head, head->n);
-				free(list);
-				return (num);
-			}
-		}
-		num++;
-		list = _r(list, num, head);
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-	}
-	free(list);
-	return (num);
-}
+size_t print_listint(const listint_t *h);
+size_t listint_len(const listint_t *h);
+listint_t *add_nodeint(listint_t **head, const int n);
+listint_t *add_nodeint_end(listint_t **head, const int n);
+void free_listint(listint_t *head);
+void free_listint2(listint_t **head);
+int pop_listint(listint_t **head);
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
+int sum_listint(listint_t *head);
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
+int delete_nodeint_at_index(listint_t **head, unsigned int index);
+listint_t *reverse_listint(listint_t **head);
+size_t print_listint_safe(const listint_t *head);
+size_t free_listint_safe(listint_t **h);
+listint_t *find_listint_loop(listint_t *head);
+
+#endif
