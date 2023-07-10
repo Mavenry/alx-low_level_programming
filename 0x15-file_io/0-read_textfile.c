@@ -40,7 +40,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buff);
 		return (0);
 	}
-	lenw = write(STDOUT_FILENO, buff, lenr);
+	lenx = write(STDOUT_FILENO, buff, lent);
 	free(buff);
 	if (lent != lenx)
 		return (0);
