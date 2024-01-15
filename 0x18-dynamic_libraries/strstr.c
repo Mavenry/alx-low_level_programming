@@ -1,8 +1,13 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - str
+ * strstr - str
  *
  * return - always return 0
  */
-char *_strstr(char *haystack, char *needle);
+char *_strstr(char *haystack, char *needle)
+{
+
+
+
+}
