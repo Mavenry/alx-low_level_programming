@@ -1,0 +1,3 @@
+#default rule
+all: school.c
+	gcc school.c -o school
